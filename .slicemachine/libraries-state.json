@@ -1,0 +1,575 @@
+{
+  "src/prismic/slices": {
+    "components": {
+      "call_to_action": {
+        "library": "src/prismic/slices",
+        "id": "call_to_action",
+        "name": "CallToAction",
+        "description": "CallToAction",
+        "model": {
+          "id": "call_to_action",
+          "type": "SharedSlice",
+          "name": "CallToAction",
+          "description": "CallToAction",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "CallToAction",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "This is where it all begins...",
+                    "allowTargetBlank": true,
+                    "single": "heading1,heading2,heading3,heading4,heading5,heading6"
+                  }
+                },
+                "description": {
+                  "type": "StructuredText",
+                  "config": {
+                    "single": "paragraph",
+                    "label": "Description",
+                    "placeholder": "A nice description of your feature"
+                  }
+                },
+                "image": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "actionLink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Action Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "actionLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Action Label",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "call_to_action",
+            "items": [],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Disintermediate synergistic interfaces",
+                  "spans": []
+                }
+              ],
+              "description": [
+                {
+                  "type": "paragraph",
+                  "text": "Fugiat velit aliquip magna id irure amet exercitation do nulla velit et do minim dolor occaecat. Qui ullamco in tempor officia ad nostrud.",
+                  "spans": []
+                }
+              ],
+              "image": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"
+              },
+              "actionLink": {
+                "link_type": "Web",
+                "url": "https://prismic.io"
+              },
+              "actionLabel": "productize transparent ROI"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "CallToAction",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "navigation_item": {
+        "library": "src/prismic/slices",
+        "id": "navigation_item",
+        "name": "NavigationItem",
+        "description": "NavigationItem",
+        "model": {
+          "id": "navigation_item",
+          "type": "SharedSlice",
+          "name": "NavigationItem",
+          "description": "NavigationItem",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "NavigationItem",
+              "primary": {
+                "label": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Label",
+                    "placeholder": ""
+                  }
+                },
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                }
+              },
+              "items": {
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "label": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Label",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "navigation_item",
+            "items": [
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "label": "incubate robust infomediaries"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "label": "reinvent holistic schemas"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "label": "reintermediate plug-and-play infrastructures"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "label": "transform next-generation functionalities"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "label": "reintermediate synergistic platforms"
+              }
+            ],
+            "primary": {
+              "label": "empower enterprise e-services",
+              "link": {
+                "link_type": "Web",
+                "url": "https://slicemachine.dev"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "proxy_checker": {
+        "library": "src/prismic/slices",
+        "id": "proxy_checker",
+        "name": "ProxyChecker",
+        "description": "ProxyChecker",
+        "model": {
+          "id": "proxy_checker",
+          "type": "SharedSlice",
+          "name": "ProxyChecker",
+          "description": "ProxyChecker",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "ProxyChecker",
+              "primary": {
+                "title": {
+                  "type": "StructuredText",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": "Proxy checker",
+                    "allowTargetBlank": false,
+                    "single": "heading1,heading2,heading3"
+                  }
+                },
+                "typeDC1": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Label1",
+                    "placeholder": "Label for first button of type DC"
+                  }
+                },
+                "typeDC2": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Label2",
+                    "placeholder": "Label for second button of type DC"
+                  }
+                },
+                "locationLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Location Label",
+                    "placeholder": "Label for Location dropdown"
+                  }
+                },
+                "sessionTypeLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Session Type Label",
+                    "placeholder": "Label for Session Type dropdown"
+                  }
+                },
+                "targetUrlLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Target Url Label",
+                    "placeholder": "Label for Target Url input"
+                  }
+                },
+                "targetUrlPlaceholder": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Target Url Placeholder",
+                    "placeholder": "Placeholder inside target url input"
+                  }
+                }
+              },
+              "items": {
+                "value": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Value",
+                    "placeholder": "Value for data inside code template"
+                  }
+                },
+                "label": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Label",
+                    "placeholder": "Label for option in dropdown"
+                  }
+                },
+                "typeDC": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Type of DC",
+                    "placeholder": " Related to dropdown option by DC",
+                    "options": [
+                      "Shared",
+                      "Dedicated"
+                    ]
+                  }
+                },
+                "dropdownType": {
+                  "type": "Select",
+                  "config": {
+                    "label": "Dropdown Type",
+                    "placeholder": "Option of dropdown",
+                    "options": [
+                      "Location",
+                      "Session"
+                    ]
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "proxy_checker",
+            "items": [
+              {
+                "value": "streamline 24/7 web-readiness",
+                "label": "unleash sticky platforms",
+                "typeDC": "Dedicated",
+                "dropdownType": "Session"
+              },
+              {
+                "value": "grow real-time schemas",
+                "label": "utilize leading-edge relationships",
+                "typeDC": "Shared",
+                "dropdownType": "Session"
+              }
+            ],
+            "primary": {
+              "title": [
+                {
+                  "type": "heading1",
+                  "text": "Revolutionize cutting-edge infomediaries",
+                  "spans": []
+                }
+              ],
+              "typeDC1": "maximize leading-edge deliverables",
+              "typeDC2": "engage open-source infrastructures",
+              "locationLabel": "integrate efficient ROI",
+              "sessionTypeLabel": "optimize killer niches",
+              "targetUrlLabel": "enhance sticky action-items",
+              "targetUrlPlaceholder": "grow integrated models"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "ProxyChecker",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "seo": {
+        "library": "src/prismic/slices",
+        "id": "seo",
+        "name": "Seo",
+        "description": "Seo",
+        "model": {
+          "id": "seo",
+          "type": "SharedSlice",
+          "name": "Seo",
+          "description": "Seo",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "Seo",
+              "primary": {
+                "title": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Title",
+                    "placeholder": ""
+                  }
+                },
+                "metaDescription": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Meta Description",
+                    "placeholder": ""
+                  }
+                },
+                "indexing": {
+                  "type": "Boolean",
+                  "config": {
+                    "label": "Indexing",
+                    "default_value": false,
+                    "placeholder_true": "true",
+                    "placeholder_false": "false"
+                  }
+                },
+                "ogTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Og Title",
+                    "placeholder": ""
+                  }
+                },
+                "ogDescription": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Og Description",
+                    "placeholder": ""
+                  }
+                },
+                "ogImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Og Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "ogSecureImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Og Secure Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "twitterCard": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Card",
+                    "placeholder": ""
+                  }
+                },
+                "twitterSite": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Site",
+                    "placeholder": ""
+                  }
+                },
+                "twitterCreator": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Creator",
+                    "placeholder": ""
+                  }
+                },
+                "twitterImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Twitter Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                },
+                "twitterImageAlt": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Image Alt",
+                    "placeholder": ""
+                  }
+                },
+                "twitterTitle": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Title",
+                    "placeholder": ""
+                  }
+                },
+                "twitterDescription": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Twitter Description",
+                    "placeholder": ""
+                  }
+                },
+                "fbAppId": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Facebook App Id",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "seo",
+            "items": [],
+            "primary": {
+              "title": "harness turn-key e-services",
+              "metaDescription": "deliver proactive e-business",
+              "indexing": true,
+              "ogTitle": "transform global e-services",
+              "ogDescription": "iterate efficient channels",
+              "ogImage": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+              },
+              "ogSecureImage": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+              },
+              "twitterCard": "transform real-time deliverables",
+              "twitterSite": "deliver synergistic platforms",
+              "twitterCreator": "seize value-added methodologies",
+              "twitterImage": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+              },
+              "twitterImageAlt": "reintermediate granular initiatives",
+              "twitterTitle": "syndicate compelling metrics",
+              "twitterDescription": "enhance frictionless eyeballs",
+              "fbAppId": "maximize innovative methodologies"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "tsx"
+        },
+        "screenshotPaths": {
+          "default": {
+            "path": "/Users/marian/Desktop/marian-test/.slicemachine/assets/src/prismic/slices/Seo/default/preview.png",
+            "width": 800,
+            "height": 75
+          }
+        }
+      }
+    }
+  }
+}

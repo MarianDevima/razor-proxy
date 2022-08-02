@@ -1,0 +1,107 @@
+{
+  "id": "proxy_checker",
+  "type": "SharedSlice",
+  "name": "ProxyChecker",
+  "description": "ProxyChecker",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "ProxyChecker",
+      "primary": {
+        "title": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Title",
+            "placeholder": "Proxy checker",
+            "allowTargetBlank": false,
+            "single": "heading1,heading2,heading3"
+          }
+        },
+        "typeDC1": {
+          "type": "Text",
+          "config": {
+            "label": "Label1",
+            "placeholder": "Label for first button of type DC"
+          }
+        },
+        "typeDC2": {
+          "type": "Text",
+          "config": {
+            "label": "Label2",
+            "placeholder": "Label for second button of type DC"
+          }
+        },
+        "locationLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Location Label",
+            "placeholder": "Label for Location dropdown"
+          }
+        },
+        "sessionTypeLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Session Type Label",
+            "placeholder": "Label for Session Type dropdown"
+          }
+        },
+        "targetUrlLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Target Url Label",
+            "placeholder": "Label for Target Url input"
+          }
+        },
+        "targetUrlPlaceholder": {
+          "type": "Text",
+          "config": {
+            "label": "Target Url Placeholder",
+            "placeholder": "Placeholder inside target url input"
+          }
+        }
+      },
+      "items": {
+        "value": {
+          "type": "Text",
+          "config": {
+            "label": "Value",
+            "placeholder": "Value for data inside code template"
+          }
+        },
+        "label": {
+          "type": "Text",
+          "config": {
+            "label": "Label",
+            "placeholder": "Label for option in dropdown"
+          }
+        },
+        "typeDC": {
+          "type": "Select",
+          "config": {
+            "label": "Type of DC",
+            "placeholder": " Related to dropdown option by DC",
+            "options": [
+              "Shared",
+              "Dedicated"
+            ]
+          }
+        },
+        "dropdownType": {
+          "type": "Select",
+          "config": {
+            "label": "Dropdown Type",
+            "placeholder": "Option of dropdown",
+            "options": [
+              "Location",
+              "Session"
+            ]
+          }
+        }
+      },
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

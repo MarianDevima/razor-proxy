@@ -1,0 +1,51 @@
+[
+  {
+    "variation": "default",
+    "name": "Default",
+    "slice_type": "navigation_item",
+    "items": [
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "label": "incubate robust infomediaries"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": "reinvent holistic schemas"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "http://google.com"
+        },
+        "label": "reintermediate plug-and-play infrastructures"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "label": "transform next-generation functionalities"
+      },
+      {
+        "link": {
+          "link_type": "Web",
+          "url": "https://slicemachine.dev"
+        },
+        "label": "reintermediate synergistic platforms"
+      }
+    ],
+    "primary": {
+      "label": "empower enterprise e-services",
+      "link": {
+        "link_type": "Web",
+        "url": "https://slicemachine.dev"
+      }
+    }
+  }
+]

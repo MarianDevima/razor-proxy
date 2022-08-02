@@ -1,0 +1,37 @@
+{
+  "id": "home",
+  "label": "Home Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "call_to_action": {
+              "type": "SharedSlice"
+            },
+            "proxy_checker": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "seo": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "seo": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

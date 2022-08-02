@@ -1,0 +1,9 @@
+import MyComponent from '../../../../../../src/prismic/slices/CallToAction';
+
+export default {
+  title: 'src/prismic/slices/CallToAction'
+}
+
+
+export const _Default = () => <MyComponent slice={{"variation":"default","name":"Default","slice_type":"call_to_action","items":[],"primary":{"title":[{"type":"heading1","text":"Disintermediate synergistic interfaces","spans":[]}],"description":[{"type":"paragraph","text":"Fugiat velit aliquip magna id irure amet exercitation do nulla velit et do minim dolor occaecat. Qui ullamco in tempor officia ad nostrud.","spans":[]}],"image":{"dimensions":{"width":900,"height":500},"alt":"Placeholder image","copyright":null,"url":"https://images.unsplash.com/photo-1471897488648-5eae4ac6686b?w=900&h=500&fit=crop"},"actionLink":{"link_type":"Web","url":"https://prismic.io"},"actionLabel":"productize transparent ROI"},"id":"_Default"}} />
+_Default.storyName = 'Default'

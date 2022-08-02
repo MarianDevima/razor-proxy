@@ -1,0 +1,34 @@
+{
+  "id": "products",
+  "label": "Products Page",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "call_to_action": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    },
+    "SEO": {
+      "seo": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "seo": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

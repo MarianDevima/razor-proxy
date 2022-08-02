@@ -1,0 +1,129 @@
+{
+  "id": "seo",
+  "type": "SharedSlice",
+  "name": "Seo",
+  "description": "Seo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "Seo",
+      "primary": {
+        "title": {
+          "type": "Text",
+          "config": {
+            "label": "Title",
+            "placeholder": ""
+          }
+        },
+        "metaDescription": {
+          "type": "Text",
+          "config": {
+            "label": "Meta Description",
+            "placeholder": ""
+          }
+        },
+        "indexing": {
+          "type": "Boolean",
+          "config": {
+            "label": "Indexing",
+            "default_value": false,
+            "placeholder_true": "true",
+            "placeholder_false": "false"
+          }
+        },
+        "ogTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Og Title",
+            "placeholder": ""
+          }
+        },
+        "ogDescription": {
+          "type": "Text",
+          "config": {
+            "label": "Og Description",
+            "placeholder": ""
+          }
+        },
+        "ogImage": {
+          "type": "Image",
+          "config": {
+            "label": "Og Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "ogSecureImage": {
+          "type": "Image",
+          "config": {
+            "label": "Og Secure Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "twitterCard": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Card",
+            "placeholder": ""
+          }
+        },
+        "twitterSite": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Site",
+            "placeholder": ""
+          }
+        },
+        "twitterCreator": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Creator",
+            "placeholder": ""
+          }
+        },
+        "twitterImage": {
+          "type": "Image",
+          "config": {
+            "label": "Twitter Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "twitterImageAlt": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Image Alt",
+            "placeholder": ""
+          }
+        },
+        "twitterTitle": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Title",
+            "placeholder": ""
+          }
+        },
+        "twitterDescription": {
+          "type": "Text",
+          "config": {
+            "label": "Twitter Description",
+            "placeholder": ""
+          }
+        },
+        "fbAppId": {
+          "type": "Text",
+          "config": {
+            "label": "Facebook App Id",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

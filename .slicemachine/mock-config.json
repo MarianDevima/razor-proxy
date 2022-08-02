@@ -1,0 +1,43 @@
+{
+  "src/prismic/slices": {
+    "ProxyChecker": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        },
+        "items": {}
+      }
+    },
+    "Code": {
+      "default": {
+        "primary": {
+          "languageCode": {
+            "content": "js"
+          }
+        }
+      }
+    },
+    "TypeDc": {},
+    "CallToAction": {
+      "default": {
+        "primary": {
+          "title": {
+            "config": {
+              "patternType": "HEADING",
+              "blocks": 1
+            }
+          }
+        }
+      }
+    },
+    "Test": {}
+  },
+  "_cts": {
+    "home": {}
+  }
+}
