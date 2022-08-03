@@ -1,9 +1,8 @@
-import * as prismicH from '@prismicio/helpers';
 import { SliceZone } from '@prismicio/react';
 
 import components from '@/prismic';
-import { getFullPageByUID } from '@/utils';
-import { createClient, linkResolver } from 'prismicio';
+import { getFullPageByUID, documentsToPaths } from '@/utils';
+import { createClient } from 'prismicio';
 
 import type { PageDocument } from '@/prismic';
 import type { GetStaticPaths, GetStaticProps } from 'next/types';
@@ -35,14 +34,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const client = createClient();
   const documents = await client.getAllByType('product');
 
-  const paths = documents.reduce<string[]>((acc, doc) => {
-    const link = prismicH.asLink(doc, linkResolver);
-    if (link) {
-      acc.push(link);
-    }
-    return acc;
-  }, []);
-
+  const paths = documentsToPaths(documents);
   console.log('log', { ...paths });
 
   return {

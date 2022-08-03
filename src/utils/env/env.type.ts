@@ -6,4 +6,5 @@ export enum EnvMode {
 
 export interface IEnv {
   appName: string;
+  prismicWebhookSecret: string;
 }

@@ -30,7 +30,7 @@ const registerLanguage = async (language: Languages, parser: LanguageParser) => 
 
   const hljsLanguage = await parser();
 
-  hljs?.registerLanguage(hljsLanguage.name, hljsLanguage);
+  hljs?.registerLanguage(language, hljsLanguage);
 };
 
 const highlight = async (
