@@ -60,11 +60,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Get a list of URLs for any new, updated, or deleted documents
     let documents = await client.getAllByIDs(req.body.documents);
-
-    if (documents.some(({ id }) => globalPartDocuments.includes(id))) {
+    if (documents.some(({ type }) => globalPartDocuments.includes(type))) {
       documents = await getAllDocumentsForRevalidate(client);
     }
-
     const urls = documentsToPaths(documents);
 
     try {
