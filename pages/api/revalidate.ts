@@ -1,13 +1,42 @@
-// pages/api/revalidate.js
-
 import * as prismic from '@prismicio/client';
-import * as prismicH from '@prismicio/helpers';
 
-import { documentsToPaths, envUtil } from '@/utils';
-import { linkResolver } from 'prismicio';
+import { globalPartDocuments } from '@/constants';
+import { api, documentsToPaths, envUtil } from '@/utils';
 import sm from 'sm.json';
 
+import type { AllDocumentTypes } from '@/prismic/types.generated';
+import type { ICustomTypeInfo } from '@/types';
+import type { Client } from '@prismicio/client';
 import type { NextApiRequest, NextApiResponse } from 'next';
+const { prismicWebhookSecret, prismicCustomTypesApi, prismicRepositoryName } = envUtil.getEnv();
+
+const getActiveCustomTypesForRevalidate = async () => {
+  const customTypes = await api<ICustomTypeInfo[]>('https://customtypes.prismic.io/customtypes', {
+    headers: {
+      repository: prismicRepositoryName,
+      Authorization: `Bearer ${prismicCustomTypesApi}`,
+    },
+  });
+
+  return customTypes.filter(({ status, id }) => status && !globalPartDocuments.includes(id));
+};
+
+const getAllDocumentsForRevalidate = async (client: Client<AllDocumentTypes>) => {
+  const activeCustomTypes = await getActiveCustomTypesForRevalidate();
+
+  const result = await activeCustomTypes.reduce<Promise<AllDocumentTypes[]>>(
+    async (documentsAcc, customDocument) => {
+      const documents = await client.getAllByType(customDocument.id);
+
+      const acc = await documentsAcc;
+      acc.push(...documents);
+      return documentsAcc;
+    },
+    Promise.resolve([]),
+  );
+
+  return result;
+};
 
 // Import your app's Link Resolver (if your app uses one)
 
@@ -18,7 +47,6 @@ import type { NextApiRequest, NextApiResponse } from 'next';
  *
  * The Prismic webhook must send the correct secret.
  */
-const { prismicWebhookSecret } = envUtil.getEnv();
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.body.type === 'api-update' && req.body.documents.length > 0) {
     // Check for secret to confirm this is a valid request
@@ -31,7 +59,12 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const client = prismic.createClient(sm.apiEndpoint);
 
     // Get a list of URLs for any new, updated, or deleted documents
-    const documents = await client.getAllByIDs(req.body.documents);
+    let documents = await client.getAllByIDs(req.body.documents);
+
+    if (documents.some(({ id }) => globalPartDocuments.includes(id))) {
+      documents = await getAllDocumentsForRevalidate(client);
+    }
+
     const urls = documentsToPaths(documents);
 
     try {

@@ -4,3 +4,4 @@ export { default as isSSR } from './is-ssr';
 export * from './highlight';
 export * from './prismic';
 export * from './styles';
+export * from './fetch';

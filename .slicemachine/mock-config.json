@@ -38,6 +38,10 @@
     "Test": {}
   },
   "_cts": {
-    "home": {}
+    "home": {},
+    "navigation": {},
+    "page": {},
+    "product": {},
+    "products": {}
   }
 }

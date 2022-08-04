@@ -27,6 +27,8 @@ const mapEnv = () => {
   const parsed: IEnv = {
     appName: process.env.NEXT_PUBLIC_APP_NAME || '',
     prismicWebhookSecret: process.env.PRISMIC_WEBHOOK_SECRET || '',
+    prismicCustomTypesApi: process.env.PRISMIC_CUSTOM_TYPES_API_TOKEN || '',
+    prismicRepositoryName: process.env.PRISMIC_REPOSITORY_NAME || '',
   };
 
   return Object.freeze(parsed);
