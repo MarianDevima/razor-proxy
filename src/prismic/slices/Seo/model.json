@@ -29,9 +29,9 @@
           "type": "Boolean",
           "config": {
             "label": "Indexing",
-            "default_value": false,
+            "placeholder_false": "false",
             "placeholder_true": "true",
-            "placeholder_false": "false"
+            "default_value": true
           }
         },
         "ogTitle": {

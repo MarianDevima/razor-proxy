@@ -1,6 +1,92 @@
 {
   "src/prismic/slices": {
     "components": {
+      "block_links": {
+        "library": "src/prismic/slices",
+        "id": "block_links",
+        "name": "BlockLinks",
+        "description": "BlockLinks",
+        "model": {
+          "id": "block_links",
+          "type": "SharedSlice",
+          "name": "BlockLinks",
+          "description": "BlockLinks",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "BlockLinks",
+              "primary": {
+                "blockName": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Block Name",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "items": {
+                "link": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "linkLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Link Label",
+                    "placeholder": ""
+                  }
+                }
+              },
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "block_links",
+            "items": [
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "linkLabel": "monetize efficient architectures"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "https://slicemachine.dev"
+                },
+                "linkLabel": "disintermediate innovative interfaces"
+              },
+              {
+                "link": {
+                  "link_type": "Web",
+                  "url": "http://google.com"
+                },
+                "linkLabel": "enable next-generation experiences"
+              }
+            ],
+            "primary": {
+              "blockName": "grow leading-edge blockchains"
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
+        },
+        "screenshotPaths": {}
+      },
       "call_to_action": {
         "library": "src/prismic/slices",
         "id": "call_to_action",
@@ -106,6 +192,95 @@
         "meta": {
           "fileName": "CallToAction",
           "extension": "tsx"
+        },
+        "screenshotPaths": {}
+      },
+      "logo_with_action_button": {
+        "library": "src/prismic/slices",
+        "id": "logo_with_action_button",
+        "name": "LogoWithActionButton",
+        "description": "LogoWithActionButton",
+        "model": {
+          "id": "logo_with_action_button",
+          "type": "SharedSlice",
+          "name": "LogoWithActionButton",
+          "description": "LogoWithActionButton",
+          "variations": [
+            {
+              "id": "default",
+              "name": "Default",
+              "docURL": "...",
+              "version": "sktwi1xtmkfgx8626",
+              "description": "LogoWithActionButton",
+              "primary": {
+                "actionLink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Action Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "actionLabel": {
+                  "type": "Text",
+                  "config": {
+                    "label": "Action Label",
+                    "placeholder": ""
+                  }
+                },
+                "logoLink": {
+                  "type": "Link",
+                  "config": {
+                    "label": "Logo Link",
+                    "placeholder": "",
+                    "select": null
+                  }
+                },
+                "logoImage": {
+                  "type": "Image",
+                  "config": {
+                    "label": "Logo Image",
+                    "constraint": {},
+                    "thumbnails": []
+                  }
+                }
+              },
+              "items": {},
+              "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+            }
+          ]
+        },
+        "mocks": {
+          "default": {
+            "variation": "default",
+            "name": "Default",
+            "slice_type": "logo_with_action_button",
+            "items": [],
+            "primary": {
+              "actionLink": {
+                "link_type": "Web",
+                "url": "http://twitter.com"
+              },
+              "actionLabel": "architect user-centric web services",
+              "logoLink": {
+                "link_type": "Web",
+                "url": "http://twitter.com"
+              },
+              "logoImage": {
+                "dimensions": {
+                  "width": 900,
+                  "height": 500
+                },
+                "alt": "Placeholder image",
+                "copyright": null,
+                "url": "https://images.unsplash.com/photo-1587653915936-5623ea0b949a?w=900&h=500&fit=crop"
+              }
+            }
+          }
+        },
+        "meta": {
+          "fileName": "index",
+          "extension": "js"
         },
         "screenshotPaths": {}
       },
@@ -411,9 +586,9 @@
                   "type": "Boolean",
                   "config": {
                     "label": "Indexing",
-                    "default_value": false,
+                    "placeholder_false": "false",
                     "placeholder_true": "true",
-                    "placeholder_false": "false"
+                    "default_value": true
                   }
                 },
                 "ogTitle": {
@@ -516,11 +691,11 @@
             "slice_type": "seo",
             "items": [],
             "primary": {
-              "title": "harness turn-key e-services",
-              "metaDescription": "deliver proactive e-business",
+              "title": "facilitate vertical deliverables",
+              "metaDescription": "enable rich web-readiness",
               "indexing": true,
-              "ogTitle": "transform global e-services",
-              "ogDescription": "iterate efficient channels",
+              "ogTitle": "benchmark cutting-edge relationships",
+              "ogDescription": "incubate turn-key vortals",
               "ogImage": {
                 "dimensions": {
                   "width": 900,
@@ -528,7 +703,7 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1504198070170-4ca53bb1c1fa?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1576662712957-9c79ae1280f8?w=900&h=500&fit=crop"
               },
               "ogSecureImage": {
                 "dimensions": {
@@ -537,11 +712,11 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1560457079-9a6532ccb118?w=900&h=500&fit=crop"
               },
-              "twitterCard": "transform real-time deliverables",
-              "twitterSite": "deliver synergistic platforms",
-              "twitterCreator": "seize value-added methodologies",
+              "twitterCard": "redefine bleeding-edge technologies",
+              "twitterSite": "e-enable frictionless content",
+              "twitterCreator": "utilize value-added partnerships",
               "twitterImage": {
                 "dimensions": {
                   "width": 900,
@@ -549,12 +724,12 @@
                 },
                 "alt": "Placeholder image",
                 "copyright": null,
-                "url": "https://images.unsplash.com/photo-1448932223592-d1fc686e76ea?w=900&h=500&fit=crop"
+                "url": "https://images.unsplash.com/photo-1579931794097-0ad001e51edb?w=900&h=500&fit=crop"
               },
-              "twitterImageAlt": "reintermediate granular initiatives",
-              "twitterTitle": "syndicate compelling metrics",
-              "twitterDescription": "enhance frictionless eyeballs",
-              "fbAppId": "maximize innovative methodologies"
+              "twitterImageAlt": "incentivize web-enabled vortals",
+              "twitterTitle": "enable value-added communities",
+              "twitterDescription": "harness e-business vortals",
+              "fbAppId": "brand viral vortals"
             }
           }
         },
@@ -562,13 +737,7 @@
           "fileName": "index",
           "extension": "tsx"
         },
-        "screenshotPaths": {
-          "default": {
-            "path": "/Users/marian/Desktop/marian-test/.slicemachine/assets/src/prismic/slices/Seo/default/preview.png",
-            "width": 800,
-            "height": 75
-          }
-        }
+        "screenshotPaths": {}
       }
     }
   }

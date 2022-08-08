@@ -1,3 +1,7 @@
-import type { ImageProps } from 'next/image';
+import type { ImageField, LinkField } from '@prismicio/types';
 
-export type AppLogoProps = Omit<ImageProps, 'src'>;
+export interface AppLogoProps {
+  className?: string;
+  image: ImageField;
+  link: LinkField;
+}

@@ -4,9 +4,4 @@ export interface ILabel {
 
 export interface StyledDropdown {
   isVisible?: boolean;
-  triangle?: boolean;
-}
-
-export interface StyledDropdownItem {
-  isActive?: boolean;
 }

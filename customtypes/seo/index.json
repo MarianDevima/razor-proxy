@@ -1,6 +1,6 @@
 {
   "id": "seo",
-  "label": "Seo",
+  "label": "Default Seo",
   "repeatable": false,
   "status": true,
   "json": {

@@ -4,10 +4,10 @@ import components from '@/prismic';
 import { getFullPageByUID, documentsToPaths } from '@/utils';
 import { createClient } from 'prismicio';
 
-import type { PageDocument } from '@/prismic';
+import type { ProductDocument } from '@/prismic';
 import type { GetStaticPaths, GetStaticProps } from 'next/types';
 
-const Product = ({ page }: { page: PageDocument }) => {
+const Product = ({ page }: { page: ProductDocument }) => {
   return <SliceZone slices={page.data.slices} components={components} />;
 };
 
@@ -35,7 +35,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
   const documents = await client.getAllByType('product');
 
   const paths = documentsToPaths(documents);
-  console.log('log', { ...paths });
 
   return {
     paths: paths,

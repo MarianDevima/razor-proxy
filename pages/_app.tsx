@@ -10,14 +10,14 @@ import { linkResolver, repositoryName } from 'prismicio';
 import type { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
-  const { seo, navigation, internal, ...restPageProps } = pageProps;
+  const { seo, navigation, footer, internal, ...restPageProps } = pageProps;
   return (
     <PrismicProvider linkResolver={linkResolver} internalLinkComponent={NextLinkText}>
       <PrismicPreview repositoryName={repositoryName}>
         <MetaTags {...seo} />
         <ThemeProvider theme={theme}>
           <GlobalStyles />
-          <Layout layoutType={internal?.layout} navigation={navigation}>
+          <Layout layoutType={internal?.layout} navigation={navigation} footer={footer}>
             <Component {...restPageProps} />
           </Layout>
         </ThemeProvider>

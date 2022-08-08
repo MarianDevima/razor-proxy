@@ -1,14 +1,14 @@
-import Image from 'next/image';
-
-import logoSvg from '@/public/logo.svg';
-import { envUtil } from '@/utils';
+import { PrismicNextImage } from '@prismicio/next';
+import { PrismicLink } from '@prismicio/react';
 
 import type { AppLogoProps } from './types';
 
-const { appName } = envUtil.getEnv();
-
-const AppLogo = ({ alt, ...props }: AppLogoProps) => {
-  return <Image src={logoSvg} layout="fill" alt={alt || appName} {...props} />;
+const AppLogo = ({ image, link, className }: AppLogoProps) => {
+  return (
+    <PrismicLink field={link} className={className}>
+      <PrismicNextImage field={image} />
+    </PrismicLink>
+  );
 };
 
 export default AppLogo;

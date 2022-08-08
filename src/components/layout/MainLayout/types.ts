@@ -1,10 +1,9 @@
-import type { NavigationDocument, SeoDocument } from '@/prismic';
+import type { FooterDocument, NavigationDocument, SeoDocument } from '@/prismic';
 import type { PropsWithChildren } from 'react';
 
-//ToDo
 export interface IMainLayoutProps<
   PrismicNavigationType = NavigationDocument,
-  PrismicFooterType = {},
+  PrismicFooterType = FooterDocument,
 > extends PropsWithChildren {
   navigation?: PrismicNavigationType;
   footer?: PrismicFooterType;

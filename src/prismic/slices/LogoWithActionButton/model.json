@@ -1,0 +1,50 @@
+{
+  "id": "logo_with_action_button",
+  "type": "SharedSlice",
+  "name": "LogoWithActionButton",
+  "description": "LogoWithActionButton",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "sktwi1xtmkfgx8626",
+      "description": "LogoWithActionButton",
+      "primary": {
+        "actionLink": {
+          "type": "Link",
+          "config": {
+            "label": "Action Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "actionLabel": {
+          "type": "Text",
+          "config": {
+            "label": "Action Label",
+            "placeholder": ""
+          }
+        },
+        "logoLink": {
+          "type": "Link",
+          "config": {
+            "label": "Logo Link",
+            "placeholder": "",
+            "select": null
+          }
+        },
+        "logoImage": {
+          "type": "Image",
+          "config": {
+            "label": "Logo Image",
+            "constraint": {},
+            "thumbnails": []
+          }
+        }
+      },
+      "items": {},
+      "imageUrl": "https://images.prismic.io/slice-machine/621a5ec4-0387-4bc5-9860-2dd46cbc07cd_default_ss.png?auto=compress,format"
+    }
+  ]
+}

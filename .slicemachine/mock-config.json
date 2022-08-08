@@ -35,13 +35,40 @@
         }
       }
     },
-    "Test": {}
+    "Test": {},
+    "Seo": {
+      "default": {
+        "primary": {
+          "indexing": {
+            "content": true
+          }
+        }
+      }
+    },
+    "LogoWithActionButton": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "BlockLinks": {
+      "default": {
+        "primary": {}
+      }
+    },
+    "Link": {}
   },
   "_cts": {
     "home": {},
     "navigation": {},
     "page": {},
     "product": {},
-    "products": {}
+    "products": {},
+    "prices-page": {},
+    "pricePage": {},
+    "price": {},
+    "proxyUseCases": {},
+    "proxyUseCase": {},
+    "blog": {},
+    "footer": {}
   }
 }

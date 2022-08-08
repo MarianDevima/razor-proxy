@@ -6,6 +6,83 @@ import type * as prismicT from '@prismicio/types';
 type Simplify<T> = {
   [KeyType in keyof T]: T[KeyType];
 };
+/** Content for Blog documents */
+interface BlogDocumentData {
+  /**
+   * Text field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
+  /**
+   * Slice Zone (`seo`) field in *Blog*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.seo[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  seo: prismicT.SliceZone<BlogDocumentDataSeoSlice>;
+}
+/**
+ * Slice for *Blog → Slice Zone (`seo`)*
+ *
+ */
+type BlogDocumentDataSeoSlice = SeoSlice;
+/**
+ * Blog document from Prismic
+ *
+ * - **API ID**: `blog`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<
+  Simplify<BlogDocumentData>,
+  'blog',
+  Lang
+>;
+/** Content for Footer documents */
+interface FooterDocumentData {
+  /**
+   * Slice Zone (`slices`) field in *Footer*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: footer.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<FooterDocumentDataSlicesSlice>;
+}
+/**
+ * Slice for *Footer → Slice Zone (`slices`)*
+ *
+ */
+type FooterDocumentDataSlicesSlice = BlockLinksSlice | LogoWithActionButtonSlice;
+/**
+ * Footer document from Prismic
+ *
+ * - **API ID**: `footer`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type FooterDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<
+  Simplify<FooterDocumentData>,
+  'footer',
+  Lang
+>;
 /** Content for Home Page documents */
 interface HomeDocumentData {
   /**
@@ -58,27 +135,38 @@ export type HomeDocument<Lang extends string = string> = prismicT.PrismicDocumen
 /** Content for Navigation documents */
 interface NavigationDocumentData {
   /**
-   * Logo field in *Navigation*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.logo[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/group
-   *
-   */
-  logo: prismicT.GroupField<Simplify<NavigationDocumentDataLogoItem>>;
-  /**
-   * Dashboard field in *Navigation*
+   * Dashboard Link field in *Navigation*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.dashboard
+   * - **API ID Path**: navigation.dashboardLink
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
    *
    */
-  dashboard: prismicT.LinkField;
+  dashboardLink: prismicT.LinkField;
+  /**
+   * Logo Image field in *Navigation*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.logoImage
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  logoImage: prismicT.ImageField<null>;
+  /**
+   * Logo Link field in *Navigation*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: navigation.logoLink
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  logoLink: prismicT.LinkField;
   /**
    * Slice Zone (`slices`) field in *Navigation*
    *
@@ -90,32 +178,6 @@ interface NavigationDocumentData {
    *
    */
   slices: prismicT.SliceZone<NavigationDocumentDataSlicesSlice>;
-}
-/**
- * Item in Navigation → Logo
- *
- */
-export interface NavigationDocumentDataLogoItem {
-  /**
-   * Image field in *Navigation → Logo*
-   *
-   * - **Field Type**: Image
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.logo[].image
-   * - **Documentation**: https://prismic.io/docs/core-concepts/image
-   *
-   */
-  image: prismicT.ImageField<null>;
-  /**
-   * Link field in *Navigation → Logo*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: *None*
-   * - **API ID Path**: navigation.logo[].link
-   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-   *
-   */
-  link: prismicT.LinkField;
 }
 /**
  * Slice for *Navigation → Slice Zone (`slices`)*
@@ -136,75 +198,108 @@ export type NavigationDocument<Lang extends string = string> = prismicT.PrismicD
   'navigation',
   Lang
 >;
-/** Content for Page documents */
-interface PageDocumentData {
+/** Content for Price Pages documents */
+interface PriceDocumentData {
   /**
-   * Title field in *Page*
-   *
-   * - **Field Type**: Title
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.title
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
-   *
-   */
-  title: prismicT.TitleField;
-  /**
-   * Slice Zone (`slices`) field in *Page*
-   *
-   * - **Field Type**: Slice Zone
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.slices[]
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
-   *
-   */
-  slices: prismicT.SliceZone<PageDocumentDataSlicesSlice>;
-  /**
-   * Seo field in *Page*
-   *
-   * - **Field Type**: Group
-   * - **Placeholder**: *None*
-   * - **API ID Path**: page.seo[]
-   * - **Tab**: SEO
-   * - **Documentation**: https://prismic.io/docs/core-concepts/group
-   *
-   */
-  seo: prismicT.GroupField<Simplify<PageDocumentDataSeoItem>>;
-}
-/**
- * Slice for *Page → Slice Zone (`slices`)*
- *
- */
-type PageDocumentDataSlicesSlice = CallToActionSlice;
-/**
- * Item in Page → Seo
- *
- */
-export interface PageDocumentDataSeoItem {
-  /**
-   * Title field in *Page → Seo*
+   * Text field in *Price Pages*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: page.seo[].title
+   * - **API ID Path**: price.text
+   * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
    *
    */
-  title: prismicT.KeyTextField;
+  text: prismicT.KeyTextField;
+  /**
+   * Slice Zone (`seo`) field in *Price Pages*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: price.seo[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  seo: prismicT.SliceZone<PriceDocumentDataSeoSlice>;
 }
 /**
- * Page document from Prismic
+ * Slice for *Price Pages → Slice Zone (`seo`)*
  *
- * - **API ID**: `page`
+ */
+type PriceDocumentDataSeoSlice = SeoSlice;
+/**
+ * Price Pages document from Prismic
+ *
+ * - **API ID**: `price`
  * - **Repeatable**: `true`
  * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type PageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<
-  Simplify<PageDocumentData>,
-  'page',
+export type PriceDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<
+  Simplify<PriceDocumentData>,
+  'price',
+  Lang
+>;
+/** Content for Prices Page documents */
+interface PricesDocumentData {
+  /**
+   * Text field in *Prices Page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prices.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
+  /**
+   * Slice Zone (`slices`) field in *Prices Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prices.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  slices: prismicT.SliceZone<PricesDocumentDataSlicesSlice>;
+  /**
+   * Slice Zone (`seo`) field in *Prices Page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: prices.seo[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  seo: prismicT.SliceZone<PricesDocumentDataSeoSlice>;
+}
+/**
+ * Slice for *Prices Page → Slice Zone (`slices`)*
+ *
+ */
+type PricesDocumentDataSlicesSlice = never;
+/**
+ * Slice for *Prices Page → Slice Zone (`seo`)*
+ *
+ */
+type PricesDocumentDataSeoSlice = SeoSlice;
+/**
+ * Prices Page document from Prismic
+ *
+ * - **API ID**: `prices`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PricesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<
+  Simplify<PricesDocumentData>,
+  'prices',
   Lang
 >;
 /** Content for Product Pages documents */
@@ -305,10 +400,95 @@ export type ProductsDocument<Lang extends string = string> = prismicT.PrismicDoc
   'products',
   Lang
 >;
-/** Content for Seo documents */
+/** Content for Proxy use case pages documents */
+interface ProxyUseCaseDocumentData {
+  /**
+   * Text field in *Proxy use case pages*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proxyUseCase.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
+  /**
+   * Slice Zone (`seo`) field in *Proxy use case pages*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proxyUseCase.seo[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  seo: prismicT.SliceZone<ProxyUseCaseDocumentDataSeoSlice>;
+}
+/**
+ * Slice for *Proxy use case pages → Slice Zone (`seo`)*
+ *
+ */
+type ProxyUseCaseDocumentDataSeoSlice = SeoSlice;
+/**
+ * Proxy use case pages document from Prismic
+ *
+ * - **API ID**: `proxyUseCase`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProxyUseCaseDocument<Lang extends string = string> = prismicT.PrismicDocumentWithUID<
+  Simplify<ProxyUseCaseDocumentData>,
+  'proxyUseCase',
+  Lang
+>;
+/** Content for Proxy use cases page documents */
+interface ProxyUseCasesDocumentData {
+  /**
+   * Text field in *Proxy use cases page*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proxyUseCases.text
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  text: prismicT.KeyTextField;
+  /**
+   * Slice Zone (`seo`) field in *Proxy use cases page*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: proxyUseCases.seo[]
+   * - **Tab**: SEO
+   * - **Documentation**: https://prismic.io/docs/core-concepts/slices
+   *
+   */
+  seo: prismicT.SliceZone<ProxyUseCasesDocumentDataSeoSlice>;
+}
+/**
+ * Slice for *Proxy use cases page → Slice Zone (`seo`)*
+ *
+ */
+type ProxyUseCasesDocumentDataSeoSlice = SeoSlice;
+/**
+ * Proxy use cases page document from Prismic
+ *
+ * - **API ID**: `proxyUseCases`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type ProxyUseCasesDocument<Lang extends string = string> =
+  prismicT.PrismicDocumentWithoutUID<Simplify<ProxyUseCasesDocumentData>, 'proxyUseCases', Lang>;
+/** Content for Default Seo documents */
 interface SeoDocumentData {
   /**
-   * Slice Zone (`slices`) field in *Seo*
+   * Slice Zone (`slices`) field in *Default Seo*
    *
    * - **Field Type**: Slice Zone
    * - **Placeholder**: *None*
@@ -320,12 +500,12 @@ interface SeoDocumentData {
   slices: prismicT.SliceZone<SeoDocumentDataSlicesSlice>;
 }
 /**
- * Slice for *Seo → Slice Zone (`slices`)*
+ * Slice for *Default Seo → Slice Zone (`slices`)*
  *
  */
 type SeoDocumentDataSlicesSlice = SeoSlice;
 /**
- * Seo document from Prismic
+ * Default Seo document from Prismic
  *
  * - **API ID**: `seo`
  * - **Repeatable**: `false`
@@ -339,12 +519,86 @@ export type SeoDocument<Lang extends string = string> = prismicT.PrismicDocument
   Lang
 >;
 export type AllDocumentTypes =
+  | BlogDocument
+  | FooterDocument
   | HomeDocument
   | NavigationDocument
-  | PageDocument
+  | PriceDocument
+  | PricesDocument
   | ProductDocument
   | ProductsDocument
+  | ProxyUseCaseDocument
+  | ProxyUseCasesDocument
   | SeoDocument;
+/**
+ * Primary content in BlockLinks → Primary
+ *
+ */
+interface BlockLinksSliceDefaultPrimary {
+  /**
+   * Block Name field in *BlockLinks → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: block_links.primary.blockName
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  blockName: prismicT.KeyTextField;
+}
+/**
+ * Item in BlockLinks → Items
+ *
+ */
+export interface BlockLinksSliceDefaultItem {
+  /**
+   * Link field in *BlockLinks → Items*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: block_links.items[].link
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  link: prismicT.LinkField;
+  /**
+   * Link Label field in *BlockLinks → Items*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: block_links.items[].linkLabel
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  linkLabel: prismicT.KeyTextField;
+}
+/**
+ * Default variation for BlockLinks Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `BlockLinks`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlockLinksSliceDefault = prismicT.SharedSliceVariation<
+  'default',
+  Simplify<BlockLinksSliceDefaultPrimary>,
+  Simplify<BlockLinksSliceDefaultItem>
+>;
+/**
+ * Slice variation for *BlockLinks*
+ *
+ */
+type BlockLinksSliceVariation = BlockLinksSliceDefault;
+/**
+ * BlockLinks Shared Slice
+ *
+ * - **API ID**: `block_links`
+ * - **Description**: `BlockLinks`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type BlockLinksSlice = prismicT.SharedSlice<'block_links', BlockLinksSliceVariation>;
 /**
  * Primary content in CallToAction → Primary
  *
@@ -428,6 +682,82 @@ type CallToActionSliceVariation = CallToActionSliceDefault;
  *
  */
 export type CallToActionSlice = prismicT.SharedSlice<'call_to_action', CallToActionSliceVariation>;
+/**
+ * Primary content in LogoWithActionButton → Primary
+ *
+ */
+interface LogoWithActionButtonSliceDefaultPrimary {
+  /**
+   * Action Link field in *LogoWithActionButton → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_with_action_button.primary.actionLink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  actionLink: prismicT.LinkField;
+  /**
+   * Action Label field in *LogoWithActionButton → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_with_action_button.primary.actionLabel
+   * - **Documentation**: https://prismic.io/docs/core-concepts/key-text
+   *
+   */
+  actionLabel: prismicT.KeyTextField;
+  /**
+   * Logo Link field in *LogoWithActionButton → Primary*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_with_action_button.primary.logoLink
+   * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
+   *
+   */
+  logoLink: prismicT.LinkField;
+  /**
+   * Logo Image field in *LogoWithActionButton → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: logo_with_action_button.primary.logoImage
+   * - **Documentation**: https://prismic.io/docs/core-concepts/image
+   *
+   */
+  logoImage: prismicT.ImageField<null>;
+}
+/**
+ * Default variation for LogoWithActionButton Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: `LogoWithActionButton`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoWithActionButtonSliceDefault = prismicT.SharedSliceVariation<
+  'default',
+  Simplify<LogoWithActionButtonSliceDefaultPrimary>,
+  never
+>;
+/**
+ * Slice variation for *LogoWithActionButton*
+ *
+ */
+type LogoWithActionButtonSliceVariation = LogoWithActionButtonSliceDefault;
+/**
+ * LogoWithActionButton Shared Slice
+ *
+ * - **API ID**: `logo_with_action_button`
+ * - **Description**: `LogoWithActionButton`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/reusing-slices
+ *
+ */
+export type LogoWithActionButtonSlice = prismicT.SharedSlice<
+  'logo_with_action_button',
+  LogoWithActionButtonSliceVariation
+>;
 /**
  * Primary content in NavigationItem → Primary
  *
@@ -689,7 +1019,7 @@ interface SeoSliceDefaultPrimary {
    *
    * - **Field Type**: Boolean
    * - **Placeholder**: *None*
-   * - **Default Value**: false
+   * - **Default Value**: true
    * - **API ID Path**: seo.primary.indexing
    * - **Documentation**: https://prismic.io/docs/core-concepts/boolean
    *

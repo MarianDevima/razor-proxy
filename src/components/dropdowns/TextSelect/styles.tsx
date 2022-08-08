@@ -1,8 +1,7 @@
 import styled from 'styled-components';
 
 import { Box } from '@/components/box';
-
-import { Dropdown, DropdownItem } from '../styles';
+import { DropdownItem } from '@/components/dropdowns/DefaultDropdown';
 export const Wrapper = styled(Box)({
   position: 'relative',
   margin: 0,
@@ -16,7 +15,5 @@ export const SelectLabelButton = styled.button({
   border: '1px solid slategrey',
   cursor: 'pointer',
 });
-
-export const TextSelect = styled(Dropdown)({});
 
 export const TextSelectItem = styled(DropdownItem)({});

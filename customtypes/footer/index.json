@@ -1,0 +1,24 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone",
+        "config": {
+          "choices": {
+            "block_links": {
+              "type": "SharedSlice"
+            },
+            "logo_with_action_button": {
+              "type": "SharedSlice"
+            }
+          }
+        }
+      }
+    }
+  }
+}

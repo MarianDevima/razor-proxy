@@ -8,10 +8,6 @@ export const Wrapper = styled(Box)<IStyledWrapper>(({ checked, theme }) => ({
   background: checked ? theme.colors.accent : theme.colors.white,
 }));
 
-export const RadioInput = styled.input.attrs({ type: 'radio' }).withConfig({
-  displayName: 'StyledRadioInput',
-})(() => ({}));
+export const RadioInput = styled.input.attrs({ type: 'radio' }).withConfig({})(() => ({}));
 
-export const RadioLabel = styled.label.withConfig({
-  displayName: 'StyledRadioInputLabel',
-})(() => ({}));
+export const RadioLabel = styled.label.withConfig({})(() => ({}));

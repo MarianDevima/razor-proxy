@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 const Link = styled.a({
-  ':hover': {
-    color: 'red',
-  },
+  ':hover': {},
 });
 
 export default Link;

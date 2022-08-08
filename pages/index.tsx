@@ -8,8 +8,6 @@ import type { IPage } from '@/types';
 import type { GetStaticProps } from 'next/types';
 
 const Home = ({ page }: IPage<HomeDocument>) => {
-  console.log('page');
-
   return <SliceZone slices={page.data.slices} components={components} />;
 };
 

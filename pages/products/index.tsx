@@ -3,10 +3,10 @@ import { SliceZone } from '@prismicio/react';
 import components from '@/prismic';
 import { getFullSinglePage } from '@/utils';
 
-import type { PageDocument } from '@/prismic';
+import type { ProductsDocument } from '@/prismic';
 import type { GetStaticProps } from 'next/types';
 
-const Products = ({ page }: { page: PageDocument }) => {
+const Products = ({ page }: { page: ProductsDocument }) => {
   return <SliceZone slices={page.data.slices} components={components} />;
 };
 

@@ -8,7 +8,7 @@ import type { CreateClientConfig } from '@prismicio/next';
 
 const getPageParts = async (client: Client<AllDocumentTypes>, params?: IDefaultParams) => {
   const navigation = await client.getSingle('navigation', params);
-  const footer = {};
+  const footer = await client.getSingle('footer', params);
   const seoDocument = await client.getSingle('seo', params);
   const [seo] = seoDocument.data.slices;
   return { navigation, footer, seo };

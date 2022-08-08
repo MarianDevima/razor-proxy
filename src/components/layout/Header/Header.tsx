@@ -1,17 +1,23 @@
 import { SliceZone } from '@prismicio/react';
 
-import { Box, FlexBox } from '@/components';
+import { FlexBox } from '@/components';
 import components from '@/prismic';
 
-import type { IHeaderProps } from './types';
+import * as S from './styles';
 
-const Header = ({ navigation, ...props }: IHeaderProps) => {
+import type { NavigationDocument } from '@/prismic';
+import type { PropsWithClassName } from '@/types';
+
+const Header = ({ data, className }: PropsWithClassName<NavigationDocument>) => {
   return (
-    <Box as={'header'} {...props} role="heading">
+    <S.Wrapper className={className} as={'header'} role="heading">
+      <S.Logo image={data.logoImage} link={data.logoLink} />
       <FlexBox as={'nav'} role="navigation">
-        <SliceZone components={components} slices={navigation.data.slices} />
+        <SliceZone components={components} slices={data.slices} />
       </FlexBox>
-    </Box>
+
+      <S.DashboardLink link={data.dashboardLink}>Dashboard</S.DashboardLink>
+    </S.Wrapper>
   );
 };
 

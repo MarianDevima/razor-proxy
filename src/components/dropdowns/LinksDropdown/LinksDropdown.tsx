@@ -1,22 +1,20 @@
 import { PrismicLink } from '@prismicio/react';
 
-import * as S from './styles';
+import DefaultDropdown from '../DefaultDropdown/DefaultDropdown';
+
+import * as S from './styled';
 
 import type { ILinksDropdownProps } from './types';
 
 const LinksDropdown = ({ options, children }: ILinksDropdownProps) => (
-  <S.Wrapper>
-    <S.StyledLink>{children}</S.StyledLink>
-    <S.DropdownContentWrapper>
-      <S.DropdownContent>
-        {options.map(({ linkProps, label }, index) => (
-          <S.StyledLink key={index}>
-            <PrismicLink {...linkProps}>{label}</PrismicLink>
-          </S.StyledLink>
-        ))}
-      </S.DropdownContent>
-    </S.DropdownContentWrapper>
-  </S.Wrapper>
+  <DefaultDropdown buttonChildren={children} openOnHover triangle>
+    {!!options.length &&
+      options.map(({ linkProps, label }, index) => (
+        <S.LinkItem key={index}>
+          <PrismicLink {...linkProps}>{label}</PrismicLink>
+        </S.LinkItem>
+      ))}
+  </DefaultDropdown>
 );
 
 export default LinksDropdown;

@@ -5,34 +5,29 @@
   "status": true,
   "json": {
     "Main": {
-      "logo": {
-        "type": "Group",
-        "config": {
-          "label": "Logo",
-          "fields": {
-            "image": {
-              "type": "Image",
-              "config": {
-                "label": "Image",
-                "constraint": {},
-                "thumbnails": []
-              }
-            },
-            "link": {
-              "type": "Link",
-              "config": {
-                "label": "Link",
-                "placeholder": "",
-                "select": null
-              }
-            }
-          }
-        }
-      },
-      "dashboard": {
+      "dashboardLink": {
         "type": "Link",
         "config": {
-          "label": "Dashboard",
+          "label": "Dashboard Link",
+          "placeholder": "",
+          "select": null
+        }
+      },
+      "logoImage": {
+        "type": "Image",
+        "config": {
+          "label": "Logo Image",
+          "constraint": {
+            "width": 160,
+            "height": 25
+          },
+          "thumbnails": []
+        }
+      },
+      "logoLink": {
+        "type": "Link",
+        "config": {
+          "label": "Logo Link",
           "placeholder": "",
           "select": null
         }

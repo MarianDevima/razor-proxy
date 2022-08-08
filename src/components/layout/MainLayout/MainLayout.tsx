@@ -1,16 +1,14 @@
-import { Box } from '@/components';
-
 import * as S from './styles';
 
 import type { IMainLayoutProps } from './types';
 
-const MainLayout = ({ children, navigation }: IMainLayoutProps) => {
+const MainLayout = ({ children, navigation, footer }: IMainLayoutProps) => {
   return (
-    <Box>
-      {navigation && <S.StyledHeader navigation={navigation} />}
-
+    <>
+      {navigation && <S.StyledHeader {...navigation} />}
       <S.MainContent as={'main'}>{children}</S.MainContent>
-    </Box>
+      {footer && <S.StyledFooter {...footer} />}
+    </>
   );
 };
 
