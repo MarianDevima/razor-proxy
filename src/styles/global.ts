@@ -6,10 +6,10 @@ export const GlobalStyles = createGlobalStyle(({ theme }) => ({
   },
   body: {
     color: theme.colors.primary,
-    backgroundImage: `linear-gradient(90deg, ${theme.colors.blue1} 0%, ${theme.colors.blue2} 100%)`,
+    background: `linear-gradient(90deg, ${theme.colors.blue1} 0%, ${theme.colors.blue2} 100%)`,
+    fontFamily: ` -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;`,
     padding: 0,
     margin: 0,
-    fontFamily: ` -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;`,
   },
   a: {
     color: 'inherit',

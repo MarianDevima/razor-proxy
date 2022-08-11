@@ -1,6 +1,9 @@
+import type { PropsWithClassName } from '@/types';
 import type { PropsWithChildren, ReactNode } from 'react';
 
-export interface IDefaultDropdownProps extends PropsWithChildren, StyledWrapper {
+export interface IDefaultDropdownProps
+  extends PropsWithChildren<PropsWithClassName>,
+    StyledWrapper {
   buttonChildren: ReactNode | ReactNode[];
   triangle?: boolean;
   open?: boolean;

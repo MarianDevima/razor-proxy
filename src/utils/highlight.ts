@@ -15,8 +15,6 @@ const initHljs = async () => {
     return;
   }
 
-  console.log('init');
-
   hljs = (await import('highlight.js/lib/core')).default;
 };
 
@@ -25,8 +23,6 @@ const registerLanguage = async (language: Languages, parser: LanguageParser) => 
   if (isLanguageRegister) {
     return;
   }
-
-  console.log('load language', language);
 
   const hljsLanguage = await parser();
 
@@ -53,8 +49,6 @@ const highlight = async (
   }
 
   await registerLanguage(language, parser);
-
-  console.log('highlight', language);
 
   hljs.highlightElement(el);
 };

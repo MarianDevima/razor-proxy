@@ -1,6 +1,3 @@
-import { SliceZone } from '@prismicio/react';
-
-import components from '@/prismic';
 import { getFullPageByUID, documentsToPaths } from '@/utils';
 import { createClient } from 'prismicio';
 

@@ -5,11 +5,11 @@ import * as S from './styles';
 import type { IDefaultDropdownProps } from './types';
 
 const DefaultDropdown = forwardRef<HTMLDivElement, IDefaultDropdownProps>(function DefaultDropdown(
-  { buttonChildren, children, openOnHover, triangle, open },
+  { buttonChildren, children, openOnHover, triangle, open, className },
   ref,
 ) {
   return (
-    <S.Wrapper openOnHover={openOnHover} ref={ref}>
+    <S.Wrapper className={className} openOnHover={openOnHover} ref={ref}>
       <S.DropdownItem>{buttonChildren}</S.DropdownItem>
       {!!children && (
         <>

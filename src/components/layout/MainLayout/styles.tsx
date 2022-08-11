@@ -11,6 +11,7 @@ export const StyledHeader = styled(Header)({
 
 export const MainContent = styled(Box)({
   padding: 30,
+  overflow: 'auto',
 });
 
 export const StyledFooter = styled(Footer)({

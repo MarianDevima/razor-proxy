@@ -83,7 +83,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       },
@@ -280,7 +280,7 @@
         },
         "meta": {
           "fileName": "index",
-          "extension": "js"
+          "extension": "tsx"
         },
         "screenshotPaths": {}
       },
@@ -391,7 +391,7 @@
           }
         },
         "meta": {
-          "fileName": "index",
+          "fileName": "NavigationItem",
           "extension": "tsx"
         },
         "screenshotPaths": {}
@@ -511,19 +511,30 @@
         "mocks": {
           "default": {
             "variation": "default",
-            "name": "Default",
-            "slice_type": "proxy_checker",
+            "version": "sktwi1xtmkfgx8626",
             "items": [
               {
-                "value": "streamline 24/7 web-readiness",
-                "label": "unleash sticky platforms",
+                "value": "Value mock data",
+                "label": "Label",
+                "typeDC": "Shared",
+                "dropdownType": "Location"
+              },
+              {
+                "value": "Value mock data",
+                "label": "Label",
                 "typeDC": "Dedicated",
+                "dropdownType": "Location"
+              },
+              {
+                "value": "Value mock data",
+                "label": "Label",
+                "typeDC": "Shared",
                 "dropdownType": "Session"
               },
               {
-                "value": "grow real-time schemas",
-                "label": "utilize leading-edge relationships",
-                "typeDC": "Shared",
+                "value": "Value mock data",
+                "label": "Label",
+                "typeDC": "Dedicated",
                 "dropdownType": "Session"
               }
             ],
@@ -531,17 +542,28 @@
               "title": [
                 {
                   "type": "heading1",
-                  "text": "Revolutionize cutting-edge infomediaries",
+                  "text": "Football",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Potatoes",
+                  "spans": []
+                },
+                {
+                  "type": "heading1",
+                  "text": "Factory",
                   "spans": []
                 }
               ],
-              "typeDC1": "maximize leading-edge deliverables",
-              "typeDC2": "engage open-source infrastructures",
-              "locationLabel": "integrate efficient ROI",
-              "sessionTypeLabel": "optimize killer niches",
-              "targetUrlLabel": "enhance sticky action-items",
-              "targetUrlPlaceholder": "grow integrated models"
-            }
+              "typeDC1": "label-1",
+              "typeDC2": "label-2",
+              "locationLabel": "Location",
+              "sessionTypeLabel": "Session",
+              "targetUrlLabel": "Target Url",
+              "targetUrlPlaceholder": "Placeholder"
+            },
+            "slice_type": "proxy_checker"
           }
         },
         "meta": {

@@ -26,37 +26,35 @@ const ProxyChecker = ({ slice }: SliceComponentProps<ProxyCheckerSlice>) => {
   } = useProxyChecker(slice);
 
   return (
-    <section>
-      <S.Wrapper>
-        <Box>
-          <S.TitleWrapper>
-            <PrismicRichText field={slice.primary.title} />
-          </S.TitleWrapper>
-          {slice.primary.locationLabel}
-          <Switcher
-            value={activeTypeDC}
-            options={typesDC}
-            onChange={selectTypeDC}
-            name="proxyType"
-          ></Switcher>
-          <TextSelect value={location} options={locationOptions} onSelect={setLocation} />
-          <TextSelect value={proxyType} options={sessionsOptions} onSelect={setProxyType} />
-        </Box>
+    <S.Wrapper as="section">
+      <Box>
+        <S.TitleWrapper>
+          <PrismicRichText field={slice.primary.title} />
+        </S.TitleWrapper>
+        {slice.primary.locationLabel}
+        <Switcher
+          value={activeTypeDC}
+          options={typesDC}
+          onChange={selectTypeDC}
+          name="proxyType"
+        ></Switcher>
+        <TextSelect value={location} options={locationOptions} onSelect={setLocation} />
+        <TextSelect value={proxyType} options={sessionsOptions} onSelect={setProxyType} />
+      </Box>
 
-        <Box>
-          <Tabs
-            tabs={languageTabsLabels}
-            active={activeCodeTemplate}
-            setActive={setActiveCodeTemplate}
-          />
-          <CodeExample
-            language={languageTabs[activeCodeTemplate].value}
-            location={location.value}
-            proxyType={proxyType.value}
-          />
-        </Box>
-      </S.Wrapper>
-    </section>
+      <Box>
+        <Tabs
+          tabs={languageTabsLabels}
+          active={activeCodeTemplate}
+          setActive={setActiveCodeTemplate}
+        />
+        <CodeExample
+          language={languageTabs[activeCodeTemplate].value}
+          location={location.value}
+          proxyType={proxyType.value}
+        />
+      </Box>
+    </S.Wrapper>
   );
 };
 

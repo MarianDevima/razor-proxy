@@ -6,12 +6,14 @@ import * as S from './styled';
 
 import type { ILinksDropdownProps } from './types';
 
-const LinksDropdown = ({ options, children }: ILinksDropdownProps) => (
-  <DefaultDropdown buttonChildren={children} openOnHover triangle>
+const LinksDropdown = ({ options, children, className }: ILinksDropdownProps) => (
+  <DefaultDropdown className={className} buttonChildren={children} openOnHover triangle>
     {!!options.length &&
-      options.map(({ linkProps, label }, index) => (
+      options.map(({ linkProps, label, link }, index) => (
         <S.LinkItem key={index}>
-          <PrismicLink {...linkProps}>{label}</PrismicLink>
+          <PrismicLink field={link} {...linkProps}>
+            {label}
+          </PrismicLink>
         </S.LinkItem>
       ))}
   </DefaultDropdown>

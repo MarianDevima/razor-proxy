@@ -6,11 +6,42 @@
           "title": {
             "config": {
               "patternType": "HEADING",
-              "blocks": 1
+              "blocks": 3
             }
+          },
+          "typeDC1": {
+            "content": "label-1"
+          },
+          "typeDC2": {
+            "content": "label-2"
+          },
+          "locationLabel": {
+            "content": "Location"
+          },
+          "sessionTypeLabel": {
+            "content": "Session"
+          },
+          "targetUrlLabel": {
+            "content": "Target Url"
+          },
+          "targetUrlPlaceholder": {
+            "content": "Placeholder"
           }
         },
-        "items": {}
+        "items": {
+          "value": {
+            "content": "Value mock data"
+          },
+          "label": {
+            "content": "Label"
+          },
+          "typeDC": {
+            "content": "Shared"
+          },
+          "dropdownType": {
+            "content": "Location"
+          }
+        }
       }
     },
     "Code": {

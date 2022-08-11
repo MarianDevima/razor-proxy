@@ -1,6 +1,3 @@
-import { SliceZone } from '@prismicio/react';
-
-import components from '@/prismic';
 import { getFullSinglePage } from '@/utils';
 
 import type { PricesDocument } from '@/prismic';
