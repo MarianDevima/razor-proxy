@@ -4,5 +4,5 @@ import type { PropsWithClassName } from '@/types';
 export interface ITreeProps extends PropsWithClassName {
   data?: ITreeStructure[];
   depth?: number;
-  triangle?: ITreeNodeProps['triangle'];
+  hasTriangle?: ITreeNodeProps['hasTriangle'];
 }

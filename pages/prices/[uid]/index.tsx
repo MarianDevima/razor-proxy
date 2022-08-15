@@ -17,9 +17,7 @@ export const getStaticProps: GetStaticProps = async ({ params, previewData, loca
   const page = await getFullPageByUID('price', uid, { previewData: previewData }, { lang: locale });
 
   return {
-    props: {
-      ...page,
-    },
+    props: page,
   };
 };
 

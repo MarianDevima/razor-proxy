@@ -11,16 +11,16 @@ const TreeNode = ({
   nodes,
   className,
   depth,
-  triangle = true,
+  hasTriangle = true,
 }: PropsWithClassName<ITreeNodeProps>) => {
   const { show, toggleShow } = useTreeNode();
   return (
-    <S.Wrapper triangle={triangle} hasNested={!!nodes?.length} className={className}>
+    <S.Wrapper hasTriangle={hasTriangle} hasNested={!!nodes?.length} className={className}>
       <S.Node
         className="tree-node"
         onClick={toggleShow}
         isOpen={show}
-        triangle={triangle && !!nodes?.length}
+        hasTriangle={hasTriangle && !!nodes?.length}
       >
         {children}
       </S.Node>

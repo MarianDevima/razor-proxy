@@ -2,7 +2,7 @@ import type { ReactNode } from 'react';
 
 export interface ITreeNodeProps extends ITreeStructure {
   depth: number;
-  triangle?: IStyledNode['triangle'];
+  hasTriangle?: IStyledNode['hasTriangle'];
 }
 
 export interface ITreeStructure {
@@ -15,6 +15,6 @@ export interface IStyledNode extends IStyledWrapper {
 }
 
 export interface IStyledWrapper {
-  triangle?: boolean;
+  hasTriangle?: boolean;
   hasNested?: boolean;
 }

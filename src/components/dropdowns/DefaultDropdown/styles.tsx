@@ -24,7 +24,7 @@ export const Dropdown = styled(Box)<StyledDropdown>(
     ...transitionCss,
   },
   ({ isVisible }) => isVisible && { ...showCss },
-  ({ triangle }) => triangle && { top: 'calc(100% + 10px)' },
+  ({ hasTriangle }) => hasTriangle && { top: 'calc(100% + 10px)' },
 );
 
 export const DropdownContent = styled(FlexBox)(({ theme }) => ({

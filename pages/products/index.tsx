@@ -17,8 +17,6 @@ export const getStaticProps: GetStaticProps = async ({ previewData, locale }) =>
   const page = await getFullSinglePage('products', { previewData }, { lang: locale });
 
   return {
-    props: {
-      ...page,
-    },
+    props: page,
   };
 };

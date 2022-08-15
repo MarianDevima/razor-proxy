@@ -5,14 +5,14 @@ import { useOutsideClick } from '@/hooks';
 import type { ITextSelectOptions, IUseTextSelect } from './types';
 
 const useTextSelect = ({ onSelect }: IUseTextSelect) => {
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleOpen = () => {
-    setOpen(true);
+    setIsOpen(true);
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setIsOpen(false);
   };
 
   const ref = useOutsideClick<HTMLDivElement>(handleClose);
@@ -23,7 +23,7 @@ const useTextSelect = ({ onSelect }: IUseTextSelect) => {
     handleClose();
   };
 
-  return { open, ref, handleOpen, handleChange };
+  return { isOpen, ref, handleOpen, handleChange };
 };
 
 export default useTextSelect;

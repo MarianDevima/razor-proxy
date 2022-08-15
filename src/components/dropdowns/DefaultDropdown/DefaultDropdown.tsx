@@ -5,7 +5,7 @@ import * as S from './styles';
 import type { IDefaultDropdownProps } from './types';
 
 const DefaultDropdown = forwardRef<HTMLDivElement, IDefaultDropdownProps>(function DefaultDropdown(
-  { buttonChildren, children, openOnHover, triangle, open, className },
+  { buttonChildren, children, openOnHover, hasTriangle, isOpen, className },
   ref,
 ) {
   return (
@@ -13,8 +13,8 @@ const DefaultDropdown = forwardRef<HTMLDivElement, IDefaultDropdownProps>(functi
       <S.DropdownItem>{buttonChildren}</S.DropdownItem>
       {!!children && (
         <>
-          {triangle && <S.Triangle />}
-          <S.Dropdown triangle={triangle} isVisible={open}>
+          {hasTriangle && <S.Triangle />}
+          <S.Dropdown hasTriangle={hasTriangle} isVisible={isOpen}>
             <S.DropdownContent>{children}</S.DropdownContent>
           </S.Dropdown>
         </>

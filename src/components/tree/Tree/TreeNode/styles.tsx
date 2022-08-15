@@ -5,9 +5,9 @@ import { Box, FlexBox } from '@/components/box';
 import type { IStyledNode, IStyledWrapper } from './types';
 
 export const Wrapper = styled(Box)<IStyledWrapper>(
-  ({ triangle, hasNested }) =>
-    triangle && {
-      marginLeft: triangle && hasNested ? 0 : 30,
+  ({ hasTriangle, hasNested }) =>
+    hasTriangle && {
+      marginLeft: hasTriangle && hasNested ? 0 : 30,
     },
 );
 export const Node = styled(FlexBox)<IStyledNode>(
@@ -18,8 +18,8 @@ export const Node = styled(FlexBox)<IStyledNode>(
       marginLeft: 10,
     },
   },
-  ({ isOpen, triangle }) =>
-    triangle && {
+  ({ isOpen, hasTriangle }) =>
+    hasTriangle && {
       ':before': {
         content: '""',
         display: 'inline-block',

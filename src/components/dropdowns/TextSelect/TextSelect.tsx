@@ -5,7 +5,7 @@ import useTextSelect from './useTextSelect';
 
 import type { ITextSelectProps } from './types';
 const TextSelect = ({ options, value, onSelect }: ITextSelectProps) => {
-  const { open, ref, handleChange, handleOpen } = useTextSelect({ onSelect });
+  const { isOpen, ref, handleChange, handleOpen } = useTextSelect({ onSelect });
   return (
     <DefaultDropdown
       ref={ref}
@@ -14,7 +14,7 @@ const TextSelect = ({ options, value, onSelect }: ITextSelectProps) => {
           {value?.label || 'Not selected'}
         </S.SelectLabelButton>
       }
-      open={open}
+      isOpen={isOpen}
     >
       {options.map((option, index) => (
         <S.TextSelectItem
@@ -26,23 +26,6 @@ const TextSelect = ({ options, value, onSelect }: ITextSelectProps) => {
         </S.TextSelectItem>
       ))}
     </DefaultDropdown>
-
-    // <S.Wrapper ref={ref}>
-    //   <S.SelectLabelButton onClick={handleOpen}>
-    //     {value?.label || 'Not selected'}
-    //   </S.SelectLabelButton>
-    //   <S.TextSelect isVisible={open}>
-    //     {options.map((option, index) => (
-    //       <S.TextSelectItem
-    //         onClick={handleChange(option)}
-    //         isActive={option.value === value?.value}
-    //         key={index}
-    //       >
-    //         {option.label}
-    //       </S.TextSelectItem>
-    //     ))}
-    //   </S.TextSelect>
-    // </S.Wrapper>
   );
 };
 

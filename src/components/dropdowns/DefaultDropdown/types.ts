@@ -5,12 +5,12 @@ export interface IDefaultDropdownProps
   extends PropsWithChildren<PropsWithClassName>,
     StyledWrapper {
   buttonChildren: ReactNode | ReactNode[];
-  triangle?: boolean;
-  open?: boolean;
+  hasTriangle?: boolean;
+  isOpen?: boolean;
 }
 export interface StyledDropdown {
   isVisible?: boolean;
-  triangle: IDefaultDropdownProps['triangle'];
+  hasTriangle: IDefaultDropdownProps['hasTriangle'];
 }
 export interface StyledDropdownItem {
   isActive?: boolean;

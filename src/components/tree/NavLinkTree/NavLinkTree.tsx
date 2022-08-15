@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useMemo } from 'react';
 
 import { Tree } from '@/components/tree';
 
@@ -12,11 +12,16 @@ const NavLinkTree = ({
   label,
   nestedLinks,
 }: PropsWithClassName<ILinkTreeProps>) => {
-  const linkComponent = useCallback(
-    ({ link: prismicLink, label: prismicLabel }: ILinksTree) => (
-      <S.Link field={prismicLink}>{prismicLabel}</S.Link>
-    ),
-    [],
+  const linkComponent = ({ link: prismicLink, label: prismicLabel }: ILinksTree) => (
+    <S.Link field={prismicLink}>{prismicLabel}</S.Link>
+  );
+
+  const nodes = useMemo(
+    () =>
+      nestedLinks.map((props) => ({
+        children: linkComponent(props),
+      })),
+    [nestedLinks],
   );
 
   return (
@@ -25,9 +30,7 @@ const NavLinkTree = ({
       data={[
         {
           children: linkComponent({ label, link }),
-          nodes: nestedLinks.map((props) => ({
-            children: linkComponent(props),
-          })),
+          nodes,
         },
       ]}
     />

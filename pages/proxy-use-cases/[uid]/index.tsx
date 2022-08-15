@@ -22,9 +22,7 @@ export const getStaticProps: GetStaticProps = async ({ params, previewData, loca
   );
 
   return {
-    props: {
-      ...page,
-    },
+    props: page,
   };
 };
 
