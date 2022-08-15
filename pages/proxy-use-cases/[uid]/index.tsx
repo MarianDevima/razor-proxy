@@ -2,10 +2,10 @@ import { getFullPageByUID, documentsToPaths } from '@/utils';
 import { createClient } from 'prismicio';
 
 import type { ProxyUseCaseDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticPaths, GetStaticProps } from 'next/types';
 
-const ProxyUseCase = ({ page }: { page: ProxyUseCaseDocument }) => {
-  //   return <SliceZone slices={page.data.slices} components={components} />;
+const ProxyUseCase = ({ page }: IPage<ProxyUseCaseDocument>) => {
   return <div>{page.data.text}</div>;
 };
 

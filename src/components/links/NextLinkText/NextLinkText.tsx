@@ -1,6 +1,6 @@
 import { default as NextLink } from 'next/link';
 
-import Link from '../Link';
+import { Link } from '@/components';
 
 import type { NextLinkTextProps } from './types';
 

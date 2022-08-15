@@ -5,7 +5,6 @@ import type { IPage } from '@/types';
 import type { GetStaticProps } from 'next/types';
 
 const Blog = ({ page }: IPage<BlogDocument>) => {
-  //   return <SliceZone slices={page.data.slices} components={components} />;
   return <div>{page.data.text}</div>;
 };
 

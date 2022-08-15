@@ -1,4 +1,4 @@
-import Tree from '../Tree';
+import { Tree } from '@/components';
 
 import * as S from './styles';
 import useTreeNode from './useTreeNode';

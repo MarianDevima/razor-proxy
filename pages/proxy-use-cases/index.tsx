@@ -1,10 +1,10 @@
 import { getFullSinglePage } from '@/utils';
 
 import type { ProxyUseCasesDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticProps } from 'next/types';
 
-const ProxyUseCases = ({ page }: { page: ProxyUseCasesDocument }) => {
-  //   return <SliceZone slices={page.data.slices} components={components} />;
+const ProxyUseCases = ({ page }: IPage<ProxyUseCasesDocument>) => {
   return <div>{page.data.text}</div>;
 };
 

@@ -2,7 +2,7 @@ import Head from 'next/head';
 
 import { envUtil } from '@/utils';
 
-import type { IMetaTagsProps } from './type';
+import type { IMetaTagsProps } from './types';
 
 const MetaTags = (seo: IMetaTagsProps) => {
   const { appName } = envUtil.getEnv();

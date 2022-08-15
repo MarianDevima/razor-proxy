@@ -2,10 +2,10 @@ import { getFullPageByUID, documentsToPaths } from '@/utils';
 import { createClient } from 'prismicio';
 
 import type { PriceDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticPaths, GetStaticProps } from 'next/types';
 
-const Price = ({ page }: { page: PriceDocument }) => {
-  // return <SliceZone slices={page.data.slices} components={components} />;
+const Price = ({ page }: IPage<PriceDocument>) => {
   return <div>{page.data.text}</div>;
 };
 

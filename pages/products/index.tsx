@@ -4,9 +4,10 @@ import components from '@/prismic';
 import { getFullSinglePage } from '@/utils';
 
 import type { ProductsDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticProps } from 'next/types';
 
-const Products = ({ page }: { page: ProductsDocument }) => {
+const Products = ({ page }: IPage<ProductsDocument>) => {
   return <SliceZone slices={page.data.slices} components={components} />;
 };
 

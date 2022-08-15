@@ -5,9 +5,10 @@ import { getFullPageByUID, documentsToPaths } from '@/utils';
 import { createClient } from 'prismicio';
 
 import type { ProductDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticPaths, GetStaticProps } from 'next/types';
 
-const Product = ({ page }: { page: ProductDocument }) => {
+const Product = ({ page }: IPage<ProductDocument>) => {
   return <SliceZone slices={page.data.slices} components={components} />;
 };
 

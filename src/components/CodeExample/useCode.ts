@@ -3,8 +3,9 @@ import { useEffect, useRef, useState } from 'react';
 import { getHighlightedCodeExample } from '@/utils';
 
 import type { IUseCode } from './types';
+import type { PropsWithChildren } from 'react';
 
-const useCodeExample = ({ language, ...templateProps }: IUseCode) => {
+const useCodeExample = ({ language, ...templateProps }: PropsWithChildren<IUseCode>) => {
   const codeRef = useRef<HTMLElement>(null);
   const [codeExample, setCodeExample] = useState('');
 

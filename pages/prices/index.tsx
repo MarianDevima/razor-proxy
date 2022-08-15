@@ -1,10 +1,10 @@
 import { getFullSinglePage } from '@/utils';
 
 import type { PricesDocument } from '@/prismic';
+import type { IPage } from '@/types';
 import type { GetStaticProps } from 'next/types';
 
-const Prices = ({ page }: { page: PricesDocument }) => {
-  //return <SliceZone slices={page.data.slices} components={components} />;
+const Prices = ({ page }: IPage<PricesDocument>) => {
   return <div>{page.data.text}</div>;
 };
 
